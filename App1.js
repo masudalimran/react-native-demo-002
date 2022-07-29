@@ -5,6 +5,7 @@ import sample1 from "./assets/sample1.jpg";
 import sample2 from "./assets/sample2.jpg";
 import sample3 from "./assets/sample3.jpg";
 import sample4 from "./assets/sample4.png";
+import Portfolio from "./components/portfolio";
 
 export default function App() {
   // Use State
@@ -14,8 +15,10 @@ export default function App() {
   // Use Effect
   useEffect(() => {
     setPicArr([sample1, sample2, sample3, sample4]);
-    setPic(picArr[0]);
-    setPicCounter(1);
+    setTimeout(() => {
+      setPic(picArr[0]);
+      setPicCounter(1);
+    }, 500);
   }, []);
 
   // Functions
@@ -30,8 +33,9 @@ export default function App() {
   };
   return (
     <View style={styles.container}>
+      {/* <Portfolio /> */}
       <Image source={pic} style={{ width: 305, height: 159 }} />
-      <Text style={styles.head1}>Masud Al Imran {picCounter}</Text>
+      <Text style={styles.head1}>Masud Al Imran </Text>
       <Text style={styles.para}>
         {" "}
         I am a dedicated web developer & software engineer, Specializing in
